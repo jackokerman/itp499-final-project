@@ -71,7 +71,7 @@ class YelpAPI {
         }
 
         // Build URL
-        $url = $this->url_base . 'business/' . $business_id;
+        $url = ($this->url_base . 'business/' . $business_id);
 
         return $this->get_json($url);
     }
@@ -89,4 +89,4 @@ class YelpAPI {
         return $this->get_json($url);
     }
 
-} 
+}

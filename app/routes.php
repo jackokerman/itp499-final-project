@@ -20,5 +20,13 @@ Route::get('/', function()
         "XBFGphFBfZH5X8Y0tJRzDL9777M"
     );
 
-    dd($yelpApi->business_query('bar-ama-los-angeles'));
+    dd($yelpApi->business_query('bäco-mercat-los-angeles-2'));
+});
+
+Route::get("/restaurants", function() {
+
+    $restauants = Restaurant::all();
+
+    dd($restauants);
+
 });

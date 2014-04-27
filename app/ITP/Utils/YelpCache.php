@@ -21,6 +21,8 @@ class YelpCache {
 
     public function business_query($business_id=null) {
 
+        $business_id = urlencode($business_id);
+
         $json = Cache::get($business_id);
 
         if (!$json) {
