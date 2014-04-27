@@ -54,7 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'itp.460.usc.edu',
+			'host'      => 'itp460.usc.edu',
 			'database'  => 'okerman',
 			'username'  => 'okerman',
 			'password'  => 'pokemon',
