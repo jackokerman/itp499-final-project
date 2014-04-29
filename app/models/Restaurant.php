@@ -8,4 +8,7 @@
 
 class Restaurant extends Eloquent {
 
+    public function critic() {
+        return $this->belongsTo("Critic");
+    }
 } 

@@ -1,23 +1,15 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Jack
+ * Date: 4/28/14
+ * Time: 2:28 AM
+ */
 
 class HomeController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+    public function showAbout() {
+        return View::make("about");
+    }
 
-	public function showWelcome()
-	{
-		return View::make('hello');
-	}
-
-}
+} 

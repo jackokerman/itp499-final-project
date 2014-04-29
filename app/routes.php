@@ -11,22 +11,31 @@
 |
 */
 
-Route::get('/', function()
-{
-    $yelpApi = new ITP\Utils\YelpCache(
-        "5ZPD2Fo4nCAT6sXBgGDsgQ",
-        "aJw64rHX05h62c-_6wZUtld4w1U",
-        "dAWNt6WwMyNLd8ZL2dbl3TMsvx7Vn6HI",
-        "XBFGphFBfZH5X8Y0tJRzDL9777M"
-    );
+// UserController
+Route::get("/users/register", "UserController@showRegistration");
+Route::post("/users/create", "UserController@createUser");
+Route::get("/users/login", "UserController@showLogin");
+Route::post("/users/login", "UserController@login");
+Route::get("/users/logout", "UserController@logout");
 
-    dd($yelpApi->business_query('bäco-mercat-los-angeles-2'));
-});
+// FavoriteController
+Route::get("/favorites", [
+    "before" => "auth",
+    "uses" => "FavoriteController@showFavorites"
+]);
+Route::get("/favorites/add/{id}", [
+    "before" => "auth",
+    "uses" => "FavoriteController@addFavorite"
+]);
+Route::get("/favorites/remove/{id}", [
+    "before" => "auth",
+    "uses" => "FavoriteController@removeFavorite"
+]);
 
-Route::get("/restaurants", function() {
+// RestaurantController
+Route::get("/restaurants", "RestaurantController@showRestaurants");
+Route::get("/restaurants/{id}", "RestaurantController@showRestaurant");
 
-    $restauants = Restaurant::all();
-
-    dd($restauants);
-
-});
+// HomeController
+Route::get("/about", "HomeController@showAbout");
+Route::get("/", "HomeController@showAbout");
